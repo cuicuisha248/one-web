@@ -1,0 +1,110 @@
+@layer utilities {
+           .content-auto {
+                content-visibility: auto;
+            }
+
+           .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+
+           .transition-transform {
+                transition: transform 0.3s ease;
+            }
+
+           .scale-on-hover {
+                transition: transform 0.3s ease;
+            }
+
+           .scale-on-hover:hover {
+                transform: scale(1.05);
+            }
+
+           .rotate-on-hover {
+                transition: transform 0.5s ease;
+            }
+
+           .rotate-on-hover:hover {
+                transform: rotate(5deg) scale(1.05);
+            }
+
+           .flip-on-hover {
+                transition: transform 0.5s ease;
+            }
+
+           .flip-on-hover:hover {
+                transform: rotateY(180deg);
+            }
+
+           .image-zoom {
+                transform-origin: center;
+                transition: transform 0.3s ease;
+            }
+
+           .image-zoom:hover {
+                transform: scale(1.2);
+            }
+
+           .carousel-slide {
+                display: none;
+            }
+
+           .carousel-slide.active {
+                display: block;
+            }
+        }
+		* {
+		 padding: 0;
+		 margin: 0;
+		  list-style: none;
+		 }
+		 #silder {
+		 margin: 0 auto;
+		 position: relative;
+		 width: 4000px;
+		height: 1000px;
+		overflow: hidden;
+		  }
+		  #list {
+		position: absolute;
+		 left:0;
+		 top: 0;
+		 width: 500%;
+		height: 1000px;
+		 }
+		 #list li {
+		 float: left;
+		 width: 2000px;
+		 height:300px;
+		 }
+		 #list li img {
+		 width: 500px;
+		 height:300px;
+		}
+		.rotate-scale {
+		    transition: all 0.6s ease-in-out;
+		  }
+		  
+		  .rotate-scale:hover {
+		    transform: rotate(15deg) scale(1.1); /* 旋转+放大组合效果 */
+		  }
+		   .rotate-3d {
+		      transition: transform 1s ease;
+		    }
+		    
+		    .rotate-3d:hover {
+		      transform: rotateY(180deg); /* 沿Y轴3D旋转 */
+		    }
+			.rotate-3dd {
+			   transition: transform 1s ease;
+			 }
+			 
+			 .rotate-3dd:hover {
+			   transform: rotateX(180deg); /* 沿X轴3D旋转 */
+			 }
+			 .rotate-on-hover {
+			    transition: transform 0.5s ease; /* 平滑过渡效果 */
+			  }
+			  
+			  .rotate-on-hover:hover {
+			    transform: rotate(360deg); /* 悬停时旋转360度 */
+			  }

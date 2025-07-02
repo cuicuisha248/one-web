@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿者科村 - 住宿推荐</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style3.css" />
+	<style>
+		body {
+		  background-image: url(img/1.jpg);
+		  background-size: cover;       /* 覆盖整个屏幕 */
+		  background-repeat: no-repeat;  /* 不重复图片 */
+		  background-attachment: fixed;  /* 关键：背景固定不滚动 */
+		  background-position: center;   /* 图片居中 */
+		  margin: 0;
+		  height: 100vh;
+		}
+	</style>
+</head>
+<body class="antialiased">
+    <!-- 导航栏 -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="bg-primary/90 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold flex items-center">
+                    <i class="fa fa-village mr-2"></i>
+                    <span>云南阿者科村</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="hover:text-accent transition-colors">首页</a>
+                    <a href="#" class="hover:text-accent transition-colors font-medium">住宿推荐</a>
+                    <a href="#accommodation-list" class="hover:text-accent transition-colors">精选住宿</a>
+					<a href="#accommodation-list1" class="hover:text-accent transition-colors">住宿特色体验</a>
+					<a href="#accommodation-list2" class="hover:text-accent transition-colors">预订须知</a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none" id="menuBtn">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+	<!-- 主横幅区域 -->
+    <section id="hero" class="pt-20">
+        <div class="relative h-screen bg-cover bg-center">
+            <div class="absolute inset-0 bg-dark/50"></div>
+            <div class="container mx-auto h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-bold text-white text-shadow mb-6">
+                    阿者科村 - 特色住宿
+                </h1>
+                <p class="text-[clamp(1rem,3vw,1.5rem)] text-white text-shadow mb-8 max-w-3xl">
+                    沉浸在哈尼族传统与现代舒适的完美融合中
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 住宿推荐内容 -->
+    <section id="accommodation-list" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">精选住宿</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+                <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+                    从传统蘑菇房到现代观景民宿，满足您的多样需求
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 住宿卡片1 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg scale-on-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/哈尼族蘑菇房民宿.webp" alt="蘑菇房民宿" class="rotate-on-hover" >
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-primary">哈尼蘑菇房民宿</h3>
+                            <div class="text-accent">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-dark/80 mb-4">
+                            传统哈尼族蘑菇房改造，保留原始建筑风格，内部设施齐全，可体验地道哈尼族生活。
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">¥280/晚</span>
+                            
+                        </div>
+                    </div>
+                </div>
+				<!-- 住宿卡片2 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg scale-on-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/梯田景观客栈.webp" alt="梯田景观客栈" class="swing-rotate">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-primary">梯田景观客栈</h3>
+                            <div class="text-accent">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                            </div>
+                        </div>
+                        <p class="text-dark/80 mb-4">
+                            位于梯田观景台附近，推窗即见壮丽梯田景观，提供哈尼族特色餐饮和文化体验活动。
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">¥480/晚</span>
+                            
+                        </div>
+                    </div>
+                </div>
+				<!-- 住宿卡片3 -->
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg scale-on-hover">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/森林生态小屋.jpg" alt="森林小屋" class="spiral-grow">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="text-xl font-bold text-primary">森林生态小屋</h3>
+                            <div class="text-accent">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-o"></i>
+                            </div>
+                        </div>
+                        <p class="text-dark/80 mb-4">
+                            隐匿在原始森林中的生态小屋，亲近自然，环境幽静，适合喜欢宁静的旅客入住。
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold text-xl">¥320/晚</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<!-- 更多住宿选项 -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-bold text-primary mb-8">更多住宿选择</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- 简易住宿卡片1 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md scale-on-hover">
+                        <div class="h-48 overflow-hidden mb-3">
+                            <img src="img/田园民宿.png" alt="田园民宿" class="w-full h-full object-cover image-zoom">
+                        </div>
+                        <h4 class="font-semibold text-primary mb-2">田园民宿</h4>
+                        <p class="text-dark/70 text-sm mb-3">田园风光，农家体验</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">¥220/晚</span>
+                            
+                        </div>
+                    </div>
+
+                    <!-- 简易住宿卡片2 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md scale-on-hover">
+                        <div class="h-48 overflow-hidden mb-3">
+                            <img src="img/观景山庄.png" alt="观景山庄" class="rotate-3d">
+                        </div>
+                        <h4 class="font-semibold text-primary mb-2">观景山庄</h4>
+                        <p class="text-dark/70 text-sm mb-3">全景视野，设施齐全</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">¥380/晚</span>
+                           
+                        </div>
+                    </div>
+
+                    <!-- 简易住宿卡片3 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md scale-on-hover">
+                        <div class="h-48 overflow-hidden mb-3">
+                            <img src="img/文化主题客栈.webp" alt="文化主题客栈" class="rotate-3dd">
+                        </div>
+                        <h4 class="font-semibold text-primary mb-2">文化主题客栈</h4>
+                        <p class="text-dark/70 text-sm mb-3">哈尼文化体验，传统工艺展示</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">¥350/晚</span>
+                           
+                        </div>
+                    </div>
+                    <!-- 简易住宿卡片4 -->
+                    <div class="bg-white p-4 rounded-xl shadow-md scale-on-hover">
+                        <div class="h-48 overflow-hidden mb-3">
+                            <img src="img/亲子民宿.webp" alt="亲子民宿" class="w-full h-full object-cover image-zoom">
+                        </div>
+                        <h4 class="font-semibold text-primary mb-2">亲子民宿</h4>
+                        <p class="text-dark/70 text-sm mb-3">家庭友好，儿童活动丰富</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-primary font-bold">¥300/晚</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!-- 住宿特色区域 -->
+    <section id="accommodation-list1" class="py-20 bg-light" style="background-color: blanchedalmond;">
+        <div class="container mx-auto px-4" >
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">住宿特色体验</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+                <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+                    独特的住宿体验，感受哈尼族文化与自然的完美结合
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 特色1 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg scale-on-hover">
+					<div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl mb-6 mx-auto">
+					    <i class="fa fa-building"></i>
+					</div>
+                    <h3 class="text-xl font-bold text-primary text-center mb-4">传统建筑</h3>
+                    <p class="text-dark/80 text-center">
+                        入住哈尼族传统蘑菇房，感受千年建筑智慧，体验独特的民族居住文化。
+                    </p>
+                </div>
+
+                <!-- 特色2 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg scale-on-hover">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl mb-6 mx-auto">
+                        <p>👀</p>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary text-center mb-4">梯田景观</h3>
+                    <p class="text-dark/80 text-center">
+                        部分民宿坐拥绝佳梯田观景位置，清晨看云海翻涌，傍晚赏金色梯田。
+                    </p>
+                </div>
+
+                <!-- 特色3 -->
+                <div class="bg-white p-8 rounded-xl shadow-lg scale-on-hover">
+                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center text-primary text-2xl mb-6 mx-auto">
+                        <p>🍽</p>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary text-center mb-4">特色餐饮</h3>
+                    <p class="text-dark/80 text-center">
+                        品尝哈尼族特色美食，食材多来自当地梯田和山林，绿色健康，风味独特。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+	<!-- 预订须知 -->
+    <section id="accommodation-list2" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">预订须知</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+                <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+                    出行前了解这些信息，让您的旅程更加顺畅
+                </p>
+            </div>
+
+            <div class="bg-light p-8 rounded-2xl">
+			<div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-6 flex items-center">
+                            <i class="fa fa-info-circle mr-3 text-accent"></i> 预订政策
+                        </h3>
+                        <ul class="space-y-4 text-dark/80">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>提前3天预订可享受9折优惠，旺季（5-10月）需提前7天预订</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>预订时需支付50%押金，入住前24小时可免费取消</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>团体预订（10人以上）可联系客服获取专属优惠套餐</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                                <span>节假日及特殊活动期间价格可能浮动，具体以预订时显示为准</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-primary mb-6 flex items-center">
+                            <i class="fa fa-map-marker mr-3 text-accent"></i> 交通指引
+                        </h3>
+                        <ul class="space-y-4 text-dark/80">
+                            <li class="flex items-start">
+                                <i class="fa fa-car mr-3 text-primary mt-1"></i>
+                                <span>自驾导航至"阿者科村游客中心"，村内提供免费停车场</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-bus mr-3 text-primary mt-1"></i>
+                                <span>从元阳县城乘坐乡村巴士至新街镇，换乘村内观光车直达</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-taxi mr-3 text-primary mt-1"></i>
+                                <span>可提前联系民宿预约接送服务（收费标准：县城至村落50元/车）</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-walking mr-3 text-primary mt-1"></i>
+                                <span>徒步爱好者可从多依树梯田出发，沿观景步道步行约2小时到达</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+	</body>
+</html>

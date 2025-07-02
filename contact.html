@@ -1,0 +1,108 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<link rel="stylesheet" href="css/style1.css" />
+		<style>
+			div{
+				width: 1000px;
+				height: 600px;
+				margin: auto;
+				background-color:skyblue;
+				background-size: 1000px;
+				font: 30px "仿宋";
+				background-image: url(img/4.webp);
+				position: bottom;
+				opacity: 0.8;
+				color: purple;
+			}
+			th{
+				text-align: left;
+			}
+			span{
+				color: red
+			}
+			p{
+				width:200px;
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div >
+			<h2 align="center">填写以下信息</h2>
+			<form action="服务器地址#" method="post">
+				<table style="align-items: center;">
+					<tr>
+						<th>注册身份<span>*</span></th>
+						<td>
+							<select name="" id="">
+								<option value="">-请选择身份-</option>
+								<option value="">未成年</option>
+								<option value="">成年</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<th>用&nbsp;户&nbsp;名<span>*</span>:</th>
+						<td>
+							<input type="text" value="用户名不能超过20个字符" maxlength="20" />
+						</td>
+					</tr>
+					<tr>
+						<th>密&nbsp;&nbsp;&nbsp;&nbsp;码<span>*</span>:</th>
+						<td>
+							<input type="password" maxlength="20" minlength="6"/>
+						</td>
+					</tr>
+					<tr>
+						<th>确认密码<span>*</span>:</th>
+						<td>
+							<input type="password" maxlength="20" minlength="6"/>
+						</td>
+					</tr>
+					<tr>
+						<th>证件类型<span>*</span>:</th>
+						<td>
+							<input type="radio" name="ID" checked/>中华人民共和国居民身份证
+						</td>
+						<td>
+							<input type="radio" name="ID"/>护照
+						</td>
+					</tr>
+					<tr>
+						<th>证件号码<span>*</span>:</th>
+						<td>
+							<input type="password" />
+						</td>
+					</tr>
+					<tr>
+						<th>联系电话<span>*</span>:</th>
+						<td>
+							<input type="password"/>
+						</td>
+					</tr>
+					<tr>
+						<th style="width: 150px;">
+							<input type="reset"/>
+						</th>
+						<td>清空，重新输入以上信息</td>
+					</tr>
+					<tr>
+						<th style="width: 150px;">
+							<input type="submit"/>
+						</th>
+						<td>
+							提交信息，审核通过后注册成功
+						</td>
+					</tr>
+				</table>
+			</form>
+			<ul class="nav-links" id="navLinks">
+			    <li><a href="liu.html" style="color: skyblue;">下一步</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,97 @@
+ :root {
+            --primary: #4F772D;
+            --accent: #D4A657;
+            --light: #F9F7F3;
+            --dark: #333333;
+        }
+        
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .scale-on-hover {
+                transition: transform 0.3s ease;
+            }
+            .scale-on-hover:hover {
+                transform: scale(1.05);
+            }
+            .image-zoom {
+                transition: transform 0.5s ease;
+            }
+            .image-zoom:hover {
+                transform: scale(1.1);
+            }
+            .round-image {
+                border-radius: 50%;
+                overflow: hidden;
+            }
+        }
+        
+        /* 基础样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+        }
+        
+        .bg-primary {
+            background-color: var(--primary);
+        }
+        
+        .text-primary {
+            color: var(--primary);
+        }
+        
+        .bg-accent {
+            background-color: var(--accent);
+        }
+        
+        .text-accent {
+            color: var(--accent);
+        }
+		/*图片格式*/
+		 .rotate-on-hover {
+		    transition: transform 0.5s ease; /* 平滑过渡效果 */
+		  }
+		  
+		  .rotate-on-hover:hover {
+		    transform: rotate(360deg); /* 悬停时旋转360度 */
+		  }
+		  .spiral-grow {
+		      transition: all 0.7s ease;
+		    }
+		    .spiral-grow:hover {
+		      transform: rotate(720deg) scale(1.2);
+		      border-radius: 20%;
+		      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+		    }
+		@keyframes swing {
+		    0%, 100% { transform: rotate(-10deg); }
+		    50% { transform: rotate(10deg); }
+		  }
+		  .swing-rotate {
+		    transition: all 0.3s ease;
+		    transform-origin: top center;
+		  }
+		  .swing-rotate:hover {
+		    animation: swing 1s ease infinite;
+		    filter: drop-shadow(0 0 8px rgba(255,100,0,0.6));
+		  }
+		 .rotate-3d {
+		    transition: transform 1s ease;
+		  }
+		  
+		  .rotate-3d:hover {
+		    transform: rotateY(180deg); /* 沿Y轴3D旋转 */
+		  }
+		  .rotate-3dd {
+		     transition: transform 1s ease;
+		   }
+		   
+		   .rotate-3dd:hover {
+		     transform: rotateX(180deg); /* 沿X轴3D旋转 */
+		   }
+		  

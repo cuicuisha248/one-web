@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>阿者科村 - 云南哈尼族原始村落之旅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F772D',
+                        secondary: '#8B9A5B',
+                        accent: '#D4A657',
+                        dark: '#2C3E50',
+                        light: '#F9F7F1'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+		  body {
+		    background-image: url(img/2.webp);
+		    background-size: cover;       /* 覆盖整个屏幕 */
+		    background-repeat: no-repeat;  /* 不重复图片 */
+		    background-attachment: fixed;  /* 关键：背景固定不滚动 */
+		    background-position: center;   /* 图片居中 */
+		    margin: 0;
+		    height: 100vh;
+		  }
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+            .text-shadow {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            }
+            .transition-transform {
+                transition: transform 0.3s ease;
+            }
+            .scale-on-hover {
+                transition: transform 0.3s ease;
+            }
+            .scale-on-hover:hover {
+                transform: scale(1.05);
+            }
+            .rotate-on-hover {
+                transition: transform 0.5s ease;
+            }
+            .rotate-on-hover:hover {
+                transform: rotate(5deg) scale(1.05);
+            }
+            .image-zoom {
+                transform-origin: center;
+                transition: transform 0.5s ease;
+            }
+            .image-zoom:hover {
+                transform: scale(1.1);
+            }
+            .border-accent {
+                border: 4px solid #D4A657;
+            }
+            .tilt-card {
+                transition: all 0.3s ease;
+            }
+            .tilt-card:hover {
+                transform: rotate(-1deg) scale(1.03);
+            }
+            .round-image {
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .angled-image {
+                transition: transform 0.5s ease;
+                transform: rotate(3deg);
+            }
+            .angled-image:hover {
+                transform: rotate(0);
+            }
+            .badge {
+                position: absolute;
+                top: 0.5rem;
+                right: 0.5rem;
+                background-color: #4F772D;
+                color: white;
+                font-size: 0.8rem;
+                font-weight: bold;
+                padding: 0.2rem 0.5rem;
+                border-radius: 1rem;
+            }
+            .overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.7));
+            }
+            .play-icon {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: 80px;
+                height: 80px;
+                background-color: rgba(212, 166, 87, 0.9);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 2rem;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            .play-icon:hover {
+                background-color: #D4A657;
+                transform: translate(-50%, -50%) scale(1.1);
+            }
+            .video-container {
+                position: relative;
+                overflow: hidden;
+                border-radius: 12px;
+                box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            }
+            .video-container video {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+		 /* 图片翻转样式 */
+		        .flip-card {
+		            background-color: transparent;
+		            width: 300px;
+		            height: 200px;
+		            perspective: 1000px;
+		            margin-bottom: 20px;
+		        }
+		
+		        .flip-card-inner {
+		            position: relative;
+		            width: 100%;
+		            height: 100%;
+		            text-align: center;
+		            transition: transform 0.6s;
+		            transform-style: preserve-3d;
+		            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		        }
+		
+		        .flip-card:hover .flip-card-inner {
+		            transform: rotateY(180deg);
+		        }
+		
+		        .flip-card-front,
+		        .flip-card-back {
+		            position: absolute;
+		            width: 100%;
+		            height: 100%;
+		            -webkit-backface-visibility: hidden;
+		            backface-visibility: hidden;
+		        }
+		
+		        .flip-card-front {
+		            background-color: #bbb;
+		            color: black;
+		        }
+		
+		        .flip-card-back {
+		            background-color: #2980b9;
+		            color: white;
+		            transform: rotateY(180deg);
+		        }
+				 .rotate-img {
+				    transition: transform 0.5s ease;
+				  }
+				  .rotate-img:hover {
+				    transform: rotate(15deg);
+				  }
+				   .rotate-on-hover {
+				      transition: transform 0.5s ease; /* 平滑过渡效果 */
+				    }
+				    
+				    .rotate-on-hover:hover {
+				      transform: rotate(360deg); /* 悬停时旋转360度 */
+				    }
+					 .blur-spin {
+					    transition: all 0.5s ease-out;
+					  }
+					  .blur-spin:hover {
+					    transform: rotate(45deg);
+					    filter: blur(2px) brightness(1.2);
+					    border-radius: 15px;
+					  }
+	@keyframes elastic-rotate {
+	    0% { transform: rotate(0deg) scale(1); }
+	    30% { transform: rotate(190deg) scale(1.1); }
+	    60% { transform: rotate(160deg) scale(1); }
+	    100% { transform: rotate(180deg) scale(1); }
+	  }
+	  .elastic {
+	    transition: all 0.4s ease;
+	  }
+	  .elastic:hover {
+	    animation: elastic-rotate 1s forwards;
+	    opacity: 0.8;
+	  }
+	@keyframes swing {
+	    0%, 100% { transform: rotate(-10deg); }
+	    50% { transform: rotate(10deg); }
+	  }
+	  .swing-rotate {
+	    transition: all 0.3s ease;
+	    transform-origin: top center;
+	  }
+	  .swing-rotate:hover {
+	    animation: swing 1s ease infinite;
+	    filter: drop-shadow(0 0 8px rgba(255,100,0,0.6));
+	  }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark antialiased">
+    <!-- 导航栏 -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="bg-primary/90 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center" style="height: 80px;">
+                <a href="#" class="text-2xl font-bold flex items-center">
+                    <i class="fa fa-village mr-2"></i>
+                    <span>云南阿者科村</span>
+                </a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/10 transition-colors"">首页</a>
+                    <a href="#attractions" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/10 transition-colors"">旅游景点</a>
+					<a href="#scenic" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/10 transition-colors">自然景观</a>
+					<a href="#cultural" class="px-6 py-2 bg-light text-dark rounded-full hover:bg-primary/10 transition-colors">文化体验</a>
+					<a href="#activities" class="px-6 py-2 bg-light text-dark rounded-full hover:bg-primary/10 transition-colors">特色活动</a>
+                </div>
+                <button class="md:hidden text-white focus:outline-none" id="menuBtn">
+                    <i class="fa fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- 主横幅区域 -->
+    <section id="home" class="pt-20">
+        <div class="relative h-screen bg-cover bg-center" >
+
+            <div class="absolute inset-0 bg-dark/50"></div>
+            <div class="container mx-auto h-full flex flex-col justify-center items-center text-center px-4">
+                <h1 class="text-[clamp(2.5rem,8vw,5rem)] font-bold text-white text-shadow mb-6">
+                    阿者科村 - 哈尼族的千年秘境
+                </h1>
+                <p class="text-[clamp(1rem,3vw,1.5rem)] text-white text-shadow mb-8 max-w-3xl">
+                    隐藏在云南哀牢山中的原始村落，保存完好的哈尼族传统文化与壮丽梯田景观
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 旅游景点部分 -->
+    <section id="attractions" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">旅游景点</h2>
+                <div class="w-24 h-1 bg-accent mx-auto"></div>
+                <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+                    探索阿者科村的自然与文化景观，体验独特的哈尼族风情
+                </p>
+            </div>
+
+            <!-- 景点分类导航 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <a href="#scenic" class="px-6 py-2 bg-primary text-white rounded-full hover:bg-primary/90 transition-colors">
+                    自然景观
+                </a>
+                <a href="#cultural" class="px-6 py-2 bg-light text-dark rounded-full hover:bg-primary/10 transition-colors">
+                    文化体验
+                </a>
+                <a href="#activities" class="px-6 py-2 bg-light text-dark rounded-full hover:bg-primary/10 transition-colors">
+                    特色活动
+                </a>
+            </div>
+			<!-- 自然景观 -->
+            <section id="scenic" class="mb-20">
+                <h3 class="text-2xl font-bold text-primary mb-12 text-center">自然景观</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- 视频区域 -->
+                    <div class="video-section">
+                        <div class="video-container" >
+                            <h4 class="text-xl font-semibold text-primary mb-2">哀牢山梯田全景</h4>
+                            <video controls autoplay muted loop style="height: 600px;width: 800px;">
+                                <source src="img/视频.mp4" type="video/mp4" >
+                                您的浏览器不支持视频播放，请更换浏览器或下载视频观看。
+                            </video>
+                        </div>
+                    </div>
+                    <!-- 森林景观 - 卡片悬浮风格 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:-translate-y-2 hover:shadow-xl scale-on-hover">
+                        <div style="padding: 5px; background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb); border-radius: 8px; display: inline-block;">
+                          <img src="img/原始森林.webp" style="display: block; border-radius: 5px; height: 255px; width: 500px;" class="swing-rotate">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-primary mb-2">原始森林</h4>
+                            <p class="text-dark/80">
+                                村落周边的原始森林是天然氧吧，古树参天，溪流潺潺，栖息着多种珍稀动植物。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 溪流景观 - 边框突出风格 -->
+                    <div class="relative">
+                        <div class="border-accent rounded-xl overflow-hidden shadow-lg scale-on-hover">
+                            <img src="img/溪流瀑布.webp" alt="山间溪流" class="w-full h-64 object-cover image-zoom">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-lg font-semibold text-primary">溪流瀑布</h4>
+							<p class="text-dark/80">
+							    清晨的哀牢山常被云海覆盖，村庄与梯田在云海中若隐若现，宛如仙境。
+							</p>
+                        </div>
+                    </div>
+
+                    <!-- 云海景观 - 半透明遮罩风格 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg group scale-on-hover">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="img/云海奇观.webp" alt="云海奇观" class="rotate-img">
+                            <div class="absolute inset-0 bg-dark/30 group-hover:bg-dark/10 transition-colors"></div>
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-primary mb-2">云海奇观</h4>
+                            <p class="text-dark/80">
+                                清晨的哀牢山常被云海覆盖，村庄与梯田在云海中若隐若现，宛如仙境。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 观景台景观 - 倾斜卡片风格 -->
+                    <div class="bg-white rounded-xl overflow-hidden shadow-lg tilt-card scale-on-hover">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="img/梯田观景台.jpg" alt="观景台" class="w-full h-full object-cover image-zoom" style="border: 3px dashed #a1a1a1; padding: 10px; border-radius: 5px;">
+                        </div>
+                        <div class="p-6">
+                            <h4 class="text-xl font-semibold text-primary mb-2">梯田观景台</h4>
+                            <p class="text-dark/80">
+                                村落附近的观景台是拍摄梯田全景的最佳位置，可俯瞰层层叠叠的梯田与村落全貌。
+                            </p>
+                        </div>
+                    </div>
+                    <!-- 稻田景观 - 网格叠加风格 -->
+                    <div class="relative scale-on-hover">
+                        <div class="rounded-xl overflow-hidden shadow-lg" style="padding: 5px; background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fbc2eb); border-radius: 8px; display: inline-block;" >
+                            <img src="img/稻田风光.webp" alt="稻田风光" class="w-full h-64 object-cover image-zoom" style="display: block; border-radius: 5px; height: 255px; width: 500px;">
+                            <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PHBhdGggZD0iTSAwIDBoMjB2MjBoLTIweiIgZmlsbD0iI2ZmZiIgZmlsbC1vcGFjaXR5PSIwLjEiLz48L3N2Zz4=')]"></div>
+                        </div>
+                        <div class="p-6 bg-white">
+                            <h4 class="text-xl font-semibold text-primary mb-2">稻田风光</h4>
+                            <p class="text-dark/80">
+                                秋季成熟的稻田一片金黄，与哈尼族蘑菇房相映成趣，展现出丰收的田园美景。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+			<!-- 文化体验 -->
+            <section id="cultural" class="mb-20 bg-light p-8 rounded-2xl">
+                <h3 class="text-2xl font-bold text-primary mb-12 text-center">文化体验</h3>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- 左图右文 - 传统织布 -->
+                    <div class="order-2 md:order-1">
+                        <h4 class="text-xl font-semibold text-primary mb-4">传统织布体验</h4>
+                        <p class="text-dark/80 mb-6 leading-relaxed">
+                            在阿者科村，你可以跟随哈尼族妇女学习传统织布技艺。从纺线、染色到织布，体验哈尼族服饰制作的全过程。
+                        </p>
+                        <p class="text-dark/80 mb-6 leading-relaxed">
+                            哈尼族传统染料取自天然植物，色彩鲜艳且环保，织布图案多蕴含着民族文化寓意，每一块布料都是独一无二的艺术品。
+                        </p>
+                    </div>
+                    <div class="order-1 md:order-2 relative scale-on-hover">
+                        <div class="rounded-xl overflow-hidden shadow-xl">
+                            <img src="img/传统织布.webp" alt="传统织布" class="w-full h-auto image-zoom">
+                        </div>
+                        <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg rotate-on-hover">
+                            <img src="https://picsum.photos/id/1060/200/200" alt="织布工具" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md image-zoom">
+                        </div>
+                    </div>
+					<!-- 右图左文 - 梯田农耕 -->
+                    <div class="order-1 md:order-2 relative mt-12 md:mt-0 scale-on-hover">
+                        <div class="rounded-xl overflow-hidden shadow-xl">
+                           <img src="img/梯田农耕体验.webp" alt="梯田农耕" class="elastic">
+                        </div>
+                        <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg rotate-on-hover">
+                            <img src="https://picsum.photos/id/1061/800/600" alt="农耕工具" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md image-zoom">
+                        </div>
+                    </div>
+                    <div class="order-2 md:order-1 mt-12 md:mt-0">
+                        <h4 class="text-xl font-semibold text-primary mb-4">梯田农耕体验</h4>
+                        <p class="text-dark/80 mb-6 leading-relaxed">
+                            跟随哈尼族村民下田耕作，体验梯田插秧、除草等农耕活动，感受千年农耕文明的智慧。
+                        </p>
+                        <p class="text-dark/80 mb-6 leading-relaxed">
+                            哈尼族的梯田灌溉系统巧妙利用自然地势，你还可以了解这一古老系统的运作原理，亲身参与农田管理。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 文化体验网格 - 图片带标签风格 -->
+                <!-- 图片翻转 -->
+                        <div class="flip-card" style="height: 500px;width: 1000px; text-align: center;" >
+                            <div class="flip-card-inner" style="height: 400px;width: 1000px;margin-top: 25px;">
+                                <div class="flip-card-front"style="height: 550px;width: 1000px;  text-align:right;"  >
+                                    <img src="img/刺绣体验.jpg" alt="图片1" style="height: 550px;width: 1000px;" >
+                                </div>
+                                <div class="flip-card-back" style="height: 400px;width: 1000px;" >
+                                    <h1>云南刺绣</h1> 
+									<p>彝族（撒尼）刺绣也叫“撒尼十字绣”，彝语称为“拿窝”，是流行于云南省石林彝族自治县彝族支系撒尼人聚居区的一种民间刺绣艺术。相传彝族（撒尼）刺绣起源于唐宋时期，明清两代趋于成熟。撒尼刺绣针脚细密，工艺精湛，图案构思巧妙，组织匀称，色彩明丽，充分显露出撒尼人的聪明才智和艺术创造力，带有鲜明的民族风格和地方特色。
+									2008年6月7日，彝族（撒尼）刺绣经中华人民共和国国务院批准列入第二批国家级非物质文化遗产名录，遗产编号为Ⅶ-78。2018年5月15日，彝族（撒尼）刺绣入选第一批国家传统工艺振兴目录。</p>
+                                </div>
+                            </div>
+                        </div>
+            </section>
+			<!-- 特色活动 -->
+            <section id="activities" class="mb-20">
+                <h3 class="text-2xl font-bold text-primary mb-12 text-center">特色活动</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- 活动卡片 - 圆形图片风格 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+                        <div class="w-40 h-40 round-image mx-auto mb-4">
+                            <img src="img/长街宴.jpg" alt="长街宴" class="w-full h-full object-cover">
+                        </div>
+                        <h4 class="text-center text-lg font-semibold text-primary mb-2">长街宴</h4>
+                        <p class="text-center text-dark/80 text-sm">
+                            哈尼族传统盛宴，数十张桌子沿街摆放，品尝特色美食，感受民族热情。
+                        </p>
+                    </div>
+
+                    <!-- 活动卡片 - 斜角图片风格 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover relative overflow-hidden">
+                        <div class="absolute -top-10 -right-10 w-40 h-40 bg-accent/20 rounded-bl-full"></div>
+                        <div class="relative z-10">
+                            <div class="w-full h-40 overflow-hidden mb-4">
+                                <img src="img/火把节.webp" alt="火把节" class="rotate-on-hover">
+                            </div>
+                            <h4 class="text-center text-lg font-semibold text-primary mb-2">火把节</h4>
+                            <p class="text-center text-dark/80 text-sm">
+                                夜间点燃火把游行，载歌载舞，驱邪祈福，体验哈尼族独特的节日氛围。
+                            </p>
+                        </div>
+                    </div>
+					<!-- 活动卡片 - 边框装饰风格 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover relative">
+                        <div class="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-primary"></div>
+                        <div class="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-primary"></div>
+                        <div class="relative z-10">
+                            <div class="w-full h-40 overflow-hidden mb-4">
+                                <img src="img/民族运动会.webp" alt="民族运动会" class="w-full h-full object-cover angled-image ">
+                            </div>
+                            <h4 class="text-center text-lg font-semibold text-primary mb-2">民族运动会</h4>
+                            <p class="text-center text-dark/80 text-sm">
+                                参与打磨秋、荡秋千等传统体育活动，感受哈尼族民间运动的乐趣。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- 活动卡片 - 徽章标签风格 -->
+                    <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+                        <div class="w-full h-40 overflow-hidden mb-4 relative">
+                            <img src="img/山林徒步探险.webp" alt="徒步" class="blur-spin">
+                        </div>
+                        <h4 class="text-center text-lg font-semibold text-primary mb-2">山林徒步探险</h4>
+                        <p class="text-center text-dark/80 text-sm">
+                           穿越原始森林，探访隐秘瀑布，沿途欣赏丰富的植被和野生动物，感受自然之美。
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section>
+</body>
+</html>

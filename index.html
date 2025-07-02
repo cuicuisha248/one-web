@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>云南阿者科村</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="css/style1.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#4F772D',
+                        secondary: '#8B9A5B',
+                        accent: '#D4A657',
+                        dark: '#2C3E50',
+                        light: '#F9F7F1'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+          background-size: cover;       /* 覆盖整个屏幕 */
+          background-repeat: no-repeat;  /* 不重复图片 */
+          background-attachment: fixed;  /* 关键：背景固定不滚动 */
+          background-position: center;   /* 图片居中 */
+          margin: 0;
+          height: 100vh;
+        }
+    </style>
+</head>
+<body class="font-sans bg-light text-dark antialiased">
+    <!-- 导航栏 -->
+    <header class="fixed w-full top-0 z-50 transition-all duration-300" id="navbar">
+        <nav class="bg-primary/90 text-white shadow-lg">
+            <div class="container mx-auto px-4 py-3 flex justify-between items-center" style="height: 80px;">
+                <a href=" " class="text-2xl font-bold flex items-center">
+                    <i class="fa fa-village mr-2"></i>
+                    <span>云南阿者科村</span>
+                </a >
+                <!-- 桌面端导航 -->
+                <div class="hidden md:flex space-x-8">
+					<a href="#home" class="hover:text-accent transition-colors"></a>
+                    <div class="relative group">
+                        <a href="#about" class="hover:text-accent transition-colors flex items-center">
+                                            村落介绍
+                            <i class="fa fa-chevron-down ml-1 text-xs"></i>
+                         </a >
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#history" class="block px-4 py-2 hover:bg-primary/10 text-dark">历史文化</a>
+                            <a href="#architecture" class="block px-4 py-2 hover:bg-primary/10 text-dark">特色建筑</a>
+                            <a href="#ethnic" class="block px-4 py-2 hover:bg-primary/10 text-dark">民族风情</a>
+                        </div>
+                    </div>
+                    <div class="relative group">
+                        <a href="attractions.html" class="hover:text-accent transition-colors flex items-center">
+                            旅游景点
+                            <i class="fa fa-chevron-down ml-1 text-xs"></i>
+                        </a >
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+                            <a href="#scenic" class="block px-4 py-2 hover:bg-primary/10 text-dark">自然景观</a>
+                            <a href="#cultural" class="block px-4 py-2 hover:bg-primary/10 text-dark">文化体验</a>
+                            <a href="#activities" class="block px-4 py-2 hover:bg-primary/10 text-dark">特色活动</a>
+                        </div>
+                    </div>
+                    <a href="accommodation.html" class="hover:text-accent transition-colors">住宿推荐</a>
+                    <a href="contact.html" class="hover:text-accent transition-colors">联系我们</a>
+                </div>
+			<!-- 移动端菜单按钮 -->
+				<button class="md:hidden text-white focus:outline-none" id="menuBtn">
+				    <i class="fa fa-bars text-2xl"></i>
+				</button>
+			    </div>
+			<!-- 移动端导航菜单 -->
+			<div class="md:hidden hidden bg-primary/95" id="mobileMenu">
+				<div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+				    首页
+				    <div class="relative group">
+				        <button class="w-full text-left py-2 hover:text-accent transition-colors flex justify-between items-center"
+				            id="aboutBtn">
+				            村落介绍
+				            <i class="fa fa-chevron-down text-xs transition-transform" id="aboutChevron"></i>
+				        </button>
+				        <div
+				            class="absolute left-0 mt-2 w-full bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+				            历史文化
+				            特色建筑
+				            民族风情
+				    </div>
+				</div>
+				    <div class="relative group">
+				        <button class="w-full text-left py-2 hover:text-accent transition-colors flex justify-between items-center"
+				            id="attractionsBtn">
+				            旅游景点
+				            <i class="fa fa-chevron-down text-xs transition-transform" id="attractionsChevron"></i>
+				        </button>
+				        <div class="absolute left-0 mt-2 w-full bg-white rounded-md shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
+				            自然景观
+				            文化体验
+				            特色活动
+				        </div>
+				    </div>
+				    住宿推荐
+				    联系我们
+				</div>
+			</div>
+		</nav>
+	</header>
+	<!-- 主横幅区域 -->
+	<section id="home" class="pt-20">
+        <div class="relative h-screen bg-cover bg-center">
+	            <div id="silder">
+	             <ul id="list">
+	             <li><img src="img/3.webp" style="height: 1030px; width: 2500px;"></li>
+	             <li><img src="img/2.webp" style="height: 1030px; width: 2500px;"></li>
+	             <li><img src="img/1.jpg" style="height: 1030px; width: 2500px;"></li><!-- 把第一张图片放在最后 -->
+	             </ul>
+	             </div>
+	             <script>
+	             //第一轮结束时，切换时有个从头开始的效果
+	             var slider = document.querySelector("#slider");//获取盒子元素
+	             var list = document.querySelector("#list"); //获取ul元素
+	             var img = document.querySelector("img"); //获取图像集合
+	             var uli = list.children; //获取图片列表
+	             var index = 0; //图片序号
+	             setInterval(move, 2000); //每隔2s执行一次move()函数
+	             function move() {
+	             if (index < uli.length - 1) { //如果不是最后一张图片
+	             index++;//图片序号加1
+	             list.style.left = -index * img.offsetWidth + "px";// 图片向左移出，offsetWidth是图像的布局宽度
+	             list.style.transition = 'left 1s'; //移出图片时有过渡效果,用时1s
+	             } else { //如果是最后一张图片
+	             index = 0; //图片变为第一张
+	             list.style.left = -index * img.offsetWidth + "px";
+	             list.style.transition = 'left 0s';
+	             }
+	            }
+	             </script>
+	        </div>        
+	        <!-- 向下滚动指示 -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+	            <a href="#about" class="text-white text-3xl">
+	                <i class="fa fa-chevron-down"></i>
+	            </a>
+            </div>
+	    </div>
+	</section>
+	<!-- 村落介绍部分 -->
+	<section id="about" class="py-20 bg-white">
+	    <div class="container mx-auto px-4">
+	        <div class="text-center mb-16">
+	            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">走进阿者科村</h2>
+	            <div class="w-24 h-1 bg-accent mx-auto"></div>
+	            <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+	                一个保存着完整哈尼族传统风貌的村落，感受千年农耕文明的魅力
+	            </p>
+	        </div>
+	        <div class="grid md:grid-cols-2 gap-12 items-center">
+	            <div class="order-2 md:order-1">
+	                <h3 class="text-2xl font-bold text-primary mb-6">哈尼族最后的"活态博物馆"</h3>
+	                <p class="text-dark/80 mb-4 leading-relaxed">
+	                    阿者科村位于云南省红河州元阳县，是哈尼族聚居的典型村落，距今已有600多年历史。"阿者科"在哈尼语中意为"山清水秀的地方"，这里至今仍保持着传统的哈尼族生产生活方式。
+	                </p>
+	                <p class="text-dark/80 mb-6 leading-relaxed">
+	                    村落被列入中国传统村落名录，其独特的"蘑菇房"建筑、完善的梯田灌溉系统和丰富的民族文化，使其成为研究哈尼族历史文化的重要窗口。
+	                </p>
+	                <a href="https://baike.baidu.com/item/%E9%98%BF%E8%80%85%E7%A7%91%E6%9D%91/335720" class="inline-block bg-primary hover:bg-primary/90 text-white font-medium py-2 px-6 rounded-full transition-colors">
+	                    了解更多 <i class="fa fa-arrow-right ml-1"></i>
+	                </a>
+	            </div>
+	            <div class="order-1 md:order-2 relative">
+	                <div class="rounded-xl overflow-hidden shadow-xl scale-on-hover">
+	                    <img src="img/3.webp" alt="阿者科村全景" class="w-full h-auto">
+	                </div>
+	                <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg rotate-on-hover">
+	                    <img src="img/3.webp" alt="哈尼族村民" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md">
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</section>
+	<!-- 历史文化部分 -->
+	    <section id="history" class="py-20 bg-light">
+	        <div class="container mx-auto px-4">
+	            <div class="text-center mb-16">
+	                <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">历史与文化</h2>
+	                <div class="w-24 h-1 bg-accent mx-auto"></div>
+	                <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+	                    千年哈尼文明的活态传承，感受独特的民族文化魅力
+	                </p>
+	            </div>
+	
+	            <div class="grid md:grid-cols-3 gap-8">
+	                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow scale-on-hover">
+	                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+	                        <i class="fa fa-history text-2xl text-primary"></i>
+	                    </div>
+	                    <h3 class="text-xl font-bold text-primary mb-4">千年历史</h3>
+	                    <p class="text-dark/80 leading-relaxed">
+	                        阿者科村的历史可追溯到明代，哈尼族先民在此开垦梯田、建造家园，形成了独特的农耕文明体系，至今仍保留着传统的生产生活方式。
+	                    </p>
+	                </div>
+	
+	                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow scale-on-hover">
+	                    <div class="rotate-3d">
+	                        <i class="fa fa-book text-2xl text-primary"></i>
+	                    </div>
+	                    <h3 class="text-xl font-bold text-primary mb-4">口传文化</h3>
+	                    <p class="text-dark/80 leading-relaxed">
+	                        哈尼族没有文字，文化依靠口传心授。阿者科村保留着丰富的民间故事、歌谣和谚语，是研究哈尼族文化的重要宝库。
+	                    </p>
+	                </div>
+	
+	                <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow scale-on-hover">
+	                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+	                        <i class="fa fa-calendar text-2xl text-primary"></i>
+	                    </div>
+	                    <h3 class="text-xl font-bold text-primary mb-4">传统节日</h3>
+	                    <p class="text-dark/80 leading-relaxed">
+	                        阿者科村保留着完整的哈尼族传统节日体系，如"昂玛突"、"矻扎扎"和"十月年"等，节日期间有独特的祭祀、歌舞和饮食文化。
+	                    </p>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+		<!-- 特色建筑部分 -->
+		<section id="architecture" class="py-20 bg-white">
+		    <div class="container mx-auto px-4">
+		        <div class="text-center mb-16">
+		            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">特色建筑</h2>
+		            <div class="w-24 h-1 bg-accent mx-auto"></div>
+		            <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+		                独特的"蘑菇房"建筑，体现哈尼族与自然和谐共处的智慧
+		            </p>
+		        </div>
+		
+		        <div class="grid md:grid-cols-2 gap-12 items-center">
+		            <div>
+		                <h3 class="text-2xl font-bold text-primary mb-6">蘑菇房 - 哈尼族的建筑智慧</h3>
+		                <p class="text-dark/80 mb-4 leading-relaxed">
+		                    阿者科村的传统民居被称为"蘑菇房"，因其形状酷似蘑菇而得名。这种建筑由土基墙、竹木架和茅草顶构成，具有冬暖夏凉的特点。
+		                </p>
+		                <p class="text-dark/80 mb-6 leading-relaxed">
+		                    蘑菇房一般分为三层：底层饲养牲畜，二层住人，三层堆放粮食和杂物。这种布局既充分利用了空间，又体现了哈尼族"人、畜、粮"三位一体的生活理念。
+		                </p>
+		                <div id="">
+		                 <ul id="">
+		                 <li><img src="img/蘑菇屋1.jpg" style="height: 400px; width: 600px;"></li>
+		                 </ul>
+		                 </div>
+		            </div>
+		            <div>
+		                <h3 class="text-2xl font-bold text-primary mb-6">其他特色建筑</h3>
+		                <p class="text-dark/80 mb-4 leading-relaxed">
+		                    除了蘑菇房，阿者科村还有寨门、水磨房等特色建筑。寨门是村落的标志性入口，承载着哈尼族的信仰与守护文化；水磨房利用自然水力驱动，是传统农耕文明的重要见证。
+		                </p>
+		                <div class="grid grid-cols-2 gap-4 mt-4">
+		                    <div class="scale-on-hover">
+		                        <img src="img/寨门.jpg" alt="寨门" class="rotate-scale" style="width: 600px; height: 500px;">
+		                        <p class="text-center mt-2">寨门</p>
+		                    </div>
+		                    <div class="scale-on-hover">
+		                        <img src="img/水磨房.jpg" alt="水磨房" class="rotate-on-hover" style="width: 600px; height: 500px;">
+		                        <p class="text-center mt-2">水磨房</p>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</section>
+		
+		<!-- 图片模态框 -->
+		<div id="myModal" class="modal">
+		    <span class="close-modal">&times;</span>
+		    <img class="modal-content" id="modalImage">
+		</div>
+				<!-- 民族风情部分 -->
+				<section id="ethnic" class="py-20 bg-light">
+				    <div class="container mx-auto px-4">
+				        <div class="text-center mb-16">
+				            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-bold text-primary mb-4">民族风情</h2>
+				            <div class="w-24 h-1 bg-accent mx-auto"></div>
+				            <p class="mt-6 text-lg text-dark/80 max-w-2xl mx-auto">
+				                感受哈尼族独特的民族文化魅力，体验传承千年的民俗风情
+				            </p>
+				        </div>
+				
+				        <!-- 民族服饰展示 -->
+				        <div class="mb-20">
+				            <h3 class="text-2xl font-bold text-primary mb-10 text-center">哈尼族传统服饰</h3>
+				            <div class="grid md:grid-cols-3 gap-8">
+				                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+				                    <div class="relative overflow-hidden rounded-lg mb-4">
+				                        <img src="img/女性.jpg" alt="哈尼族女性服饰" class="rotate-scale" onclick="openModal(this.src)">
+				                    </div>
+				                    <h4 class="text-xl font-semibold text-primary mb-2">女性服饰</h4>
+				                    <p class="text-dark/80">
+				                        哈尼族女性服饰以黑色为底，绣有彩色花纹，头饰精美繁复，不同支系的服饰在细节上有独特差异，体现了哈尼族丰富的文化多样性。
+				                    </p>
+				                </div>
+				
+				                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+				                    <div class="relative overflow-hidden rounded-lg mb-4">
+				                        <img src="img/男性.webp" alt="哈尼族男性服饰" class="w-full h-auto image-zoom" onclick="openModal(this.src)" style="height: 650px;width: 450px;">
+				                    </div>
+				                    <h4 class="text-xl font-semibold text-primary mb-2">男性服饰</h4>
+				                    <p class="text-dark/80">
+				                        男性服饰以简洁实用为主，多为对襟上衣和长裤，头饰常为黑色包头，体现了哈尼族男性勤劳朴实的性格特点。
+				                    </p>
+				                </div>
+				
+				                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+				                    <div class="relative overflow-hidden rounded-lg mb-4">
+				                        <img src="img/小孩.jpg" alt="哈尼族儿童服饰" class="rotate-3d" onclick="openModal(this.src)" style="height: 650px;width: 450px;">
+				                    </div>
+				                    <h4 class="text-xl font-semibold text-primary mb-2">儿童服饰</h4>
+				                    <p class="text-dark/80">
+				                        儿童服饰色彩鲜艳，常绣有吉祥图案，帽子上装饰银饰，既美观又承载着长辈对孩子的祝福与期望。
+				                    </p>
+				                </div>
+				            </div>
+				        </div>
+						<!-- 传统节庆 -->
+						        <div class="mb-20">
+						            <h3 class="text-2xl font-bold text-primary mb-10 text-center">传统节庆活动</h3>
+						            <div class="grid md:grid-cols-2 gap-12 items-center">
+						                <div>
+						                    <h4 class="text-xl font-semibold text-primary mb-4">昂玛突 - 祭寨神</h4>
+						                    <p class="text-dark/80 mb-6 leading-relaxed">
+						                        "昂玛突"是哈尼族最隆重的传统节日之一，意为"祭寨神、树神"。节日期间，村民们身着盛装，举行神圣的祭祀仪式，祈求村寨平安、五谷丰登。
+						                    </p>
+						                    <p class="text-dark/80 mb-6 leading-relaxed">
+						                        活动包括"龙头"选祭品、祭神树、摆长街宴等环节，长街宴上摆满哈尼族特色美食，全村老少共享盛宴，气氛热烈而隆重。
+						                    </p>
+						                </div>
+						                <div class="relative">
+						                    <div class="rounded-xl overflow-hidden shadow-xl scale-on-hover">
+						                        <img src="img/祭寨神.jpg" alt="昂玛突节" class="rotate-3dd" onclick="openModal(this.src)" style="width: 750px; height:400px;">
+						                    </div>
+						                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg rotate-on-hover">
+						                        <img src="img/长街宴.jpg" alt="长街宴" class="w-24 h-24 rounded-full object-cover border-4 border-white shadow-md" onclick="openModal(this.src)" style="width: 100px; height: 100px;">
+						                    </div>
+						                </div>
+						            </div>
+						
+						            <div class="grid md:grid-cols-2 gap-12 items-center mt-12">
+						                <div class="order-2 md:order-1 relative">
+						                    <div class="rounded-xl overflow-hidden shadow-xl scale-on-hover">
+						                        <img src="img/夏日狂欢.jpg" alt="矻扎扎节" class="w-full h-auto" onclick="openModal(this.src)" style="width: 750px; height: 500px;">
+						                    </div>
+						                    <div class="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg rotate-on-hover">
+						                        <img src="img/夏日狂欢2.jpg" alt="打磨秋" class="rotate-3d" onclick="openModal(this.src)" style="width: 100px; height: 100px;">
+						                    </div>
+						                </div>
+						                <div class="order-1 md:order-2">
+						                    <h4 class="text-xl font-semibold text-primary mb-4">矻扎扎 - 夏日狂欢</h4>
+						                    <p class="text-dark/80 mb-6 leading-relaxed">
+						                        "矻扎扎"节在夏季举行，是哈尼族庆祝农业生产阶段性胜利的节日。节日期间，村民们搭建"打磨秋"，开展荡秋千、摔跤等传统体育活动。
+						                    </p>
+						                    <p class="text-dark/80 mb-6 leading-relaxed">
+						                        夜晚，全村人围着篝火跳传统舞蹈"乐作舞"，歌声、笑声回荡在村寨中，展现了哈尼族乐观向上的生活态度。
+						                    </p>
+						                </div>
+						            </div>
+						        </div>
+								<!-- 传统手工艺 -->
+								        <div>
+								            <h3 class="text-2xl font-bold text-primary mb-10 text-center">传统手工艺</h3>
+								            <div class="grid md:grid-cols-4 gap-6">
+								                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+								                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+								                        <i class="fa fa-thread text-3xl text-primary"></i>
+								                    </div>
+								                    <h4 class="text-center text-lg font-semibold text-primary mb-2">纺织技艺</h4>
+								                    <p class="text-center text-dark/80 text-sm">
+								                        哈尼族传统纺织技艺传承千年，从种棉、纺线到染色、织布，每一步都蕴含着哈尼族对生活的理解。
+								                    </p>
+								                </div>
+								
+								                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+								                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+								                        <i class="fa fa-scissors text-3xl text-primary"></i>
+								                    </div>
+								                    <h4 class="text-center text-lg font-semibold text-primary mb-2">刺绣工艺</h4>
+								                    <p class="text-center text-dark/80 text-sm">
+								                        哈尼族刺绣以其精美的图案和丰富的色彩闻名，常用于服饰装饰，图案多取材于自然和生活场景。
+								                    </p>
+								                </div>
+								
+								                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+								                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+								                        <i class="fa fa-pot text-3xl text-primary"></i>
+								                    </div>
+								                    <h4 class="text-center text-lg font-semibold text-primary mb-2">土陶制作</h4>
+								                    <p class="text-center text-dark/80 text-sm">
+								                        哈尼族土陶制作工艺独特，从选土、制坯到烧制，全部采用传统方法，成品兼具实用性和艺术性。
+								                    </p>
+								                </div>
+								
+								                <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all scale-on-hover">
+								                    <div class="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mb-4 mx-auto">
+								                        <i class="fa fa-music text-3xl text-primary"></i>
+								                    </div>
+								                    <h4 class="text-center text-lg font-semibold text-primary mb-2">乐器制作</h4>
+								                    <p class="text-center text-dark/80 text-sm">
+								                        哈尼族擅长制作竹制乐器，如巴乌、笛子等，这些乐器音色悠扬，是哈尼族民歌表演中不可或缺的部分。
+								                    </p>
+								                </div>
+								            </div>
+								        </div>
+								    </div>
+								</section>
+</body>
+</html>
